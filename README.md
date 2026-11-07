@@ -84,9 +84,13 @@ Mock Location 能改的，只有 Android 定位服务里 `gps`、`network`、`fu
 
 ### 方式一：直接下载 APK
 
-从本仓库的 [`apk/`](apk/) 目录下载 `DottoreLocation-0.4.2.apk`，传到手机上安装。
+到 [**Releases**](../../releases/latest) 页面下载 `DottoreLocation-0.4.2.apk`，传到手机上安装。
+
+也可以从仓库的 [`apk/`](apk/) 目录下载，内容相同。
 
 首次安装需要允许「安装未知来源应用」。
+
+安装包签名 SHA-256：`8a2d99990bfcb1fd171b59e74cd22dc812577bc26aa62d32c2f4c980a897ab35`
 
 ### 方式二：自己编译
 
