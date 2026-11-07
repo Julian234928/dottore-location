@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 当前生效坐标（注入系统的 WGS84 值） -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEF3FA"
+        android:padding="12dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="@string/status_idle" />
+
+    <!-- 原始输入坐标（仅在发生转换时显示） -->
+    <TextView
+        android:id="@+id/tvOriginal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="13sp"
+        android:textColor="#1565C0"
+        android:visibility="gone" />
+
+    <!-- 授权状态 -->
+    <TextView
+        android:id="@+id/tvPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textSize="13sp"
+        android:textColor="#B00020"
+        android:text="@string/permission_unknown" />
+
+    <!-- 输入坐标系 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="14sp"
+        android:text="@string/label_coord_system" />
+
+    <RadioGroup
+        android:id="@+id/rgSystem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbWgs84"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:textSize="14sp"
+            android:text="@string/system_wgs84" />
+
+        <RadioButton
+            android:id="@+id/rbGcj02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text="@string/system_gcj02" />
+    </RadioGroup>
+
+    <!-- 纬度 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:text="@string/label_latitude" />
+
+    <EditText
+        android:id="@+id/etLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:digits="0123456789.-+eE"
+        android:hint="@string/hint_latitude"
+        android:textSize="16sp"
+        android:autofillHints="" />
+
+    <!-- 经度 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:text="@string/label_longitude" />
+
+    <EditText
+        android:id="@+id/etLongitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:digits="0123456789.-+eE"
+        android:hint="@string/hint_longitude"
+        android:textSize="16sp"
+        android:autofillHints="" />
+
+    <!-- 操作按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnApply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_apply" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/action_stop" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnReadBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/action_readback" />
+
+    <!-- 操作提示 -->
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:text="@string/hint_permission_setup" />
+
+    <!-- 时间轴 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="@string/section_timeline" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSavePoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_save_point" />
+
+        <Button
+            android:id="@+id/btnClearPoints"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/action_clear_points" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTimelineEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:text="@string/timeline_empty" />
+
+    <ListView
+        android:id="@+id/lvTimeline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

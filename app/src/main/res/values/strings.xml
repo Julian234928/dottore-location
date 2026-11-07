@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dottore Location</string>
+
+    <!-- 状态区 -->
+    <string name="status_idle">当前生效坐标：未启用</string>
+    <string name="status_active">当前生效坐标（注入 WGS84）：%1$s</string>
+    <string name="status_original">原始输入（%1$s）：%2$s\n已换算为 WGS84 后注入，偏移 %3$s 米</string>
+
+    <!-- 授权 -->
+    <string name="permission_unknown">正在检查模拟位置权限…</string>
+    <string name="permission_granted">✓ 已获得模拟位置权限</string>
+    <string name="permission_denied">✗ 未获得模拟位置权限，请按下方提示设置</string>
+    <string name="permission_denied_dialog_title">缺少模拟位置权限</string>
+    <string name="permission_denied_dialog_msg">请依次操作：\n\n1. 打开系统「设置」\n2. 进入「关于手机」，连续点击版本号 7 次开启开发者选项\n3. 进入「系统 → 开发者选项」\n4. 找到「选择模拟位置信息应用」，选中本应用\n5. 返回本应用重试\n\n若开发者选项已开启，可直接跳到第 4 步。</string>
+
+    <!-- 坐标系 -->
+    <string name="label_coord_system">输入坐标系</string>
+    <string name="system_wgs84">WGS84（GPS）</string>
+    <string name="system_gcj02">GCJ-02（国内地图）</string>
+
+    <!-- 输入 -->
+    <string name="label_latitude">纬度（-90 ~ 90）</string>
+    <string name="label_longitude">经度（-180 ~ 180）</string>
+    <string name="hint_latitude">例如 39.908692</string>
+    <string name="hint_longitude">例如 116.397477</string>
+
+    <!-- 按钮 -->
+    <string name="action_apply">应用位置</string>
+    <string name="action_stop">停止并恢复</string>
+    <string name="action_readback">读取系统定位</string>
+    <string name="action_save_point">保存当前坐标</string>
+    <string name="action_clear_points">清空记录</string>
+    <string name="action_ok">知道了</string>
+    <string name="action_cancel">取消</string>
+
+    <!-- 提示 -->
+    <string name="hint_permission_setup">提示：需在「开发者选项 → 选择模拟位置信息应用」中选中本应用，否则无法注入坐标。</string>
+    <string name="hint_applied">已应用，正在持续推送坐标</string>
+    <string name="hint_applied_converted">已把 GCJ-02 换算为 WGS84 后注入</string>
+    <string name="hint_stopped">已停止，系统已恢复到真实定位</string>
+    <string name="hint_saved">已保存到时间轴</string>
+    <string name="hint_cleared">时间轴已清空</string>
+    <string name="hint_no_active_point">请先应用一个坐标，再保存到时间轴</string>
+    <string name="hint_readback_need_permission">读取系统定位需要位置权限，请授权后重试</string>
+    <string name="hint_readback_empty">系统暂未返回任何位置</string>
+
+    <!-- 时间轴 -->
+    <string name="section_timeline">时间轴（点击记录可直接应用）</string>
+    <string name="timeline_empty">暂无记录。应用坐标后可点击「保存当前坐标」。</string>
+
+    <!-- 通知 -->
+    <string name="notification_channel_name">定位模拟运行中</string>
+    <string name="notification_channel_desc">保持设定坐标持续生效</string>
+    <string name="notification_title">Dottore Location 运行中</string>
+</resources>

@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+build_tmp/
+!gradle/wrapper/gradle-wrapper.jar
+
+# 本地环境
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+
+# 签名文件（切勿提交）
+*.jks
+*.keystore
+keystore.properties
+
+# 构建日志
+*.log
+
+# 临时产物
+*.apk.idsig
